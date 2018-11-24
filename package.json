@@ -1,0 +1,15 @@
+{
+  "name": "yellowapi",
+  "version": "1.0.0",
+  "description": "yellow api camera capture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolas Fuchs",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.6.2",
+    "node-raspistill": "0.0.16"
+  }
+}
