@@ -1,3 +1,4 @@
+const cors = require('@koa/cors');
 const koa = require('koa');
 const app = new koa();
 
@@ -5,7 +6,6 @@ const Raspistill = require('node-raspistill').Raspistill;
 const camera = new Raspistill({
     width: 640,
     height: 480,
-    //fileName: 'image'
     noFileSave: true
 });
 
@@ -24,9 +24,11 @@ function cameraTimeLapse() {
     });
 }
 
+app.use(cors());
+
 app.use(async ctx => {
     ctx.status = 200;
-    ctx.body = lastImage;
+    ctx.body = lastImage.toString('base64');
 });
 
 app.listen(8080);
